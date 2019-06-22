@@ -6,8 +6,10 @@ initWifi:
     call uartWriteStringZ
     ld b,#ff
 wlp:
-    nop
-    nop
+    push bc
+    ld b, #ff
+    djnz $
+    pop bc
     djnz wlp
 
     ld hl, cmd_rst
