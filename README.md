@@ -23,6 +23,7 @@ or
 ## Legals
 
 Made by Alexander Sharikhin
+
 Some part of code(preparing HTTP-request) based on [ZiFi project](https://github.com/HackerVBI/ZiFi/).
 
 This code is public domain.
