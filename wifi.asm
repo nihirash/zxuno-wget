@@ -4,9 +4,12 @@ initWifi:
 
     ld hl, cmd_plus
     call uartWriteStringZ
-    halt
-    halt
-    halt
+    ld b,#ff
+wlp:
+    nop
+    nop
+    djnz wlp
+
     ld hl, cmd_rst
     call uartWriteStringZ
 rstLp:
@@ -210,7 +213,7 @@ loadWiFiConfig:
 
     call fclose
     ret
-cmd_plus    defb "+++", 13, 10, 0
+cmd_plus    defb "+++", 0
 cmd_rst     defb "AT+RST",13, 10, 0
 cmd_at      defb "ATE0", 13, 10, 0                  ; Disable echo - less to parse
 cmd_mode    defb "AT+CWMODE_DEF=1",13,10,0	        ; Client mode
